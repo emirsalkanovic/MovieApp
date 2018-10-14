@@ -36,8 +36,9 @@ class SearchBarTV extends Component{
     				placeholder="Search" 
     				aria-label="Search"
     				value={this.state.term} 
-    				onChange={this.onInputChange}
-    				 />
+    				onChange={this.onInputChange} />
+
+    				
     				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   			</form>
 
@@ -62,7 +63,7 @@ class ShowInfo extends Component {
             <li
                 key={result.id}
                 onClick={() => this.props.selectTv(result)}
-                className="col-md-6">
+                className="col-md-6 form-group">
                 <Link to={`/${result.id}/details`}>
                     <img src={`http://image.tmdb.org/t/p/w185/${result.poster_path}`} key={result.id}/>
                     <h3>{result.name}</h3>

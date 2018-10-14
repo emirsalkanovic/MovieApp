@@ -5,8 +5,8 @@ class Header extends Component{
 		return(
 			<nav className="navbar navbar-light bg-light">
   				<form className="form-inline">
-    				<button className="btn btn-outline-success" type="button"><a href="/movies">Movies</a></button>
-    				<button className="btn btn-outline-success" type="button"><a href="/">Tv Shows</a></button>
+    				<button className="btn btn-outline-secondary btn-lg" type="button"><a href="/movies">Movies</a></button>
+    				<button className="btn btn-outline-secondary btn-lg" type="button"><a href="/">Tv Shows</a></button>
  			 	</form>
 			</nav>
 			);

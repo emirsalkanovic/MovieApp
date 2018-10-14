@@ -15,10 +15,25 @@ code {
 ul {
   text-align: center;
   list-style-type: none;
+  margin-top: 20px;
 }
 li {
   text-align: center;
+  border : 5px solid #0069d9;
+  border-radius: 5%;
+  padding-top: 20px;
 }
 .container{
   text-align: center;
 }
+
+#tvimg{
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+#mvimg{
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
