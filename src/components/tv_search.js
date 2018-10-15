@@ -15,13 +15,10 @@ class SearchBarTV extends Component{
     onInputChange(event) {
 
         this.setState({ term : event.target.value });
-    }
 
-    onFormSubmit(event) {
-        event.preventDefault();
-
-        this.props.searchShows(this.state.term);
-        this.setState({ term: ''});
+        if(this.state.term.length > 1){
+            this.props.searchShows(this.state.term);
+        }
     }
 
 	render(){
@@ -29,17 +26,14 @@ class SearchBarTV extends Component{
         const results = this.props.showsResults.searchShows;
 		return(
             <div>
-			<form onSubmit={(e) => this.onFormSubmit(e)} className="form-inline">
+			<form className="form-inline">
     				<input 
     				className="form-control mr-sm-2" 
     				type="search" 
-    				placeholder="Search" 
+    				placeholder="Search Tv Shows" 
     				aria-label="Search"
     				value={this.state.term} 
-    				onChange={this.onInputChange} />
-
-    				
-    				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    				onChange={(e) => this.onInputChange(e)} />
   			</form>
 
             <div className="container">

@@ -14,29 +14,27 @@ class SearchBar extends Component{
 
     onInputChange(event) {
         this.setState({ term : event.target.value });
+
+        if(this.state.term.length > 1){
+            this.props.searchMovies(this.state.term);
+        }
     }
 
-    onFormSubmit(event) {
-        event.preventDefault();
 
-        this.props.searchMovies(this.state.term);
-        this.setState({ term: ''});
-    }
 
 	render(){
         const results = this.props.moviesResults.searchMovies;
 		return(
             <div>
-			<form onSubmit={(e) => this.onFormSubmit(e)} className="form-inline">
+			<form className="form-inline">
     				<input 
     				className="form-control mr-sm-2" 
     				type="search" 
-    				placeholder="Search" 
+    				placeholder="Search Movies" 
     				aria-label="Search"
     				value={this.state.term} 
-    				onChange={this.onInputChange}
+    				onChange={(e) => this.onInputChange(e)}
     				 />
-    				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   			</form>
 
             <div className="container">
