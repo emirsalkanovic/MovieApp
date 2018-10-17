@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectTv, topTv } from '../actions/index';
+import SearchBarTv from './tv_search';
+
 
 import { Link } from 'react-router-dom'
 
 
 class TvShow extends Component{
+
 	render() {
 		const shows = this.props.shows.tvData;
 		return(
+			
 			<div className="container">
-						<Link to="/search">
-							<button type="button" className="btn btn-primary">Search TV Shows</button>
-						</Link>
-						<h1><i class="fa fa-film" aria-hidden="true"></i> 10 TOP RATED TV SHOWS</h1>
+						<SearchBarTv />
+						<h1><i className="fa fa-film" aria-hidden="true"></i> 10 TOP RATED TV SHOWS</h1>
 						<ul className="row">
 							{ shows.slice(0, 10).map(
-								show => <TVInfo show={ show } selectTv={(show) => this.props.selectTv(show)} />
+								show => <TVInfo show={ show } selectTv={(show) => this.props.selectTv(show)} /> 
 							)}
 						</ul>
 					</div>
@@ -27,7 +29,6 @@ class TvShow extends Component{
 class TVInfo extends Component {
 	render() {
 		const { show } = this.props;
-
 		return (
 			<li
 				key={show.id}

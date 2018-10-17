@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectMovie, topMovies } from '../actions/index';
+import { selectMovie, topMovies, searchMovies } from '../actions/index';
+import SearchBar from './Search_Bar';
 
 import { Link } from 'react-router-dom';
-
-
 
 class Movies extends Component {
 	render(){
@@ -12,10 +11,8 @@ class Movies extends Component {
 				return (
 					
 					<div className="container">
-					<Link to="/movies/search">
-						<button type="button" className="btn btn-primary">Search Movies</button>
-					</Link>
-						<h1><i class="fa fa-film" aria-hidden="true"></i> 10 TOP RATED MOVIES</h1>
+					<SearchBar />
+						<h1><i className="fa fa-film" aria-hidden="true"></i> 10 TOP RATED MOVIES</h1>
 						<ul className="row">
 							{ movies.slice(0, 10).map(
 								movie => <MovieInfo movie={ movie } selectMovie={(movie) => this.props.selectMovie(movie)}/>
@@ -53,7 +50,9 @@ const mapDispatchToProps = dispatch => {
     selectMovie: (movie) => {
     	dispatch(selectMovie(movie))
     },
-    getMovies: dispatch(topMovies())
+    getMovies: dispatch(topMovies()),
+    searchMovies: (term) => dispatch(searchMovies(term))
+
   };
 };
 
