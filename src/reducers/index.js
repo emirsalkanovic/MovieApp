@@ -6,6 +6,8 @@ import Movies from './movies_reducer';
 import Shows from './reducer_tv';
 import SearchMovies from './reducer_movie_search';
 import SearchShows from './reducer_show_search';
+import VideoMovie from './reducer_video_movie';
+import VideoShow from './reducer_video_show';
 
 const rootReducer = combineReducers ({
 	movies: Movies,
@@ -13,7 +15,9 @@ const rootReducer = combineReducers ({
 	activeMovie: ActiveMovie,
 	activeTv: ActiveTv,
 	searchMovies: SearchMovies,
-	searchShows: SearchShows
+	searchShows: SearchShows,
+	videoMovie: VideoMovie,
+	videoShow: VideoShow
 });
 
 export default rootReducer;

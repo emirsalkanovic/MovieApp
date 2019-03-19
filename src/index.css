@@ -12,6 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button a {
+  color: black;
+}
 ul {
   text-align: center;
   list-style-type: none;
@@ -22,9 +26,25 @@ li {
   border : 5px solid #0069d9;
   border-radius: 5%;
   padding-top: 20px;
+  background-color: #FEBF0E;
 }
+
+h1{
+  color: #0069D9;
+}
+
 .container{
   text-align: center;
+}
+
+.detail{
+  background-color: #FEBF0E;
+  color: #0069D9; 
+}
+
+.card{
+  background-color: #0069D9;
+  color: #FEBF0E;
 }
 
 #tvimg{
@@ -36,4 +56,5 @@ li {
   padding-bottom: 30px;
   padding-top: 30px;
 }
+
 

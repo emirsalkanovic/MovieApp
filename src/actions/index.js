@@ -5,6 +5,8 @@ export const RECEIVE_MOVIES = 'RECEIVE_MOVIES';
 export const RECEIVE_TV = 'RECEIVE_TV';
 export const SEARCH_MOVIES = 'SEARCH_MOVIES';
 export const SEARCH_SHOWS = 'SEARCH_SHOWS';
+export const VIDEO_MOVIE = 'VIDEO_MOVIE';
+export const VIDEO_SHOW = 'VIDEO_SHOW';
 
 
 const ROOT_URL = 'https://api.themoviedb.org/3/movie/top_rated?page=1&language=en-US&api_key=';
@@ -47,11 +49,13 @@ export function searchMovies(movie) {
 		axios
 		 .get(`${MOVIE_URL}${movie}`)
 		 .then((res) => {
+		 	const term = movie;
 		 	const results = res.data.results;
+		 	
 
 		 dispatch({
 		 	type: SEARCH_MOVIES,
-		 	payload: results
+		 	payload: { results, term }
 		 });
 		 });
 	}
@@ -84,4 +88,34 @@ export function selectTv(show) {
 		type: 'TV_SELECTED',
 		payload: show
 	};
+}
+
+export function videoMovie(id){
+	return(dispatch) => {
+		axios
+		  .get(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
+		  .then((res) => {
+		  	const results = res.data.results;
+
+		  dispatch({
+		  	type: VIDEO_MOVIE,
+		  	payload: results
+		  });
+		  });
+	}
+}
+
+export function videoShow(id){
+	return(dispatch) => {
+		axios
+		  .get(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=${API_KEY}`)
+		  .then((res) => {
+		  	const results = res.data.results;
+
+		  dispatch({
+		  	type: VIDEO_SHOW,
+		  	payload: results
+		  });
+		  });
+	}
 }

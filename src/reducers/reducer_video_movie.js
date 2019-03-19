@@ -1,17 +1,17 @@
 const INITIAL_STATE = {
-  searchMovies: [],
+  videoMovie: []
 };
 
 export default function (state = INITIAL_STATE, action) {
 	switch(action.type){
-		case 'SEARCH_MOVIES': 
-			const { movie } = action;
+		case 'VIDEO_MOVIE':
 
 		return{
 			...state,
-			searchMovies: action.payload
+			videoMovie: action.payload
 		};
 	}
 
 		return state;
-	}
+	
+}
