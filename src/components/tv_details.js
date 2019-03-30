@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { videoShow } from '../actions/index';
 
@@ -22,13 +23,16 @@ class TvShowDetails extends Component{
 		if (key == undefined){
 			return(
 				<div className="detail">
+					
 					<img id="tvimg" src={`http://image.tmdb.org/t/p/w185/${this.props.show.poster_path}`} key={this.props.show.id} />
 					<div className="card mb-3" >
+					  <div className="card-bg" />
 					  <div className="card-body">
 					    <h5 className="card-title">{this.props.show.name}</h5>
-					    <h6>Overview:</h6>
+					    <h6><strong>Overview:</strong></h6>
 					    <p className="card-text">{this.props.show.overview}</p>
 					    <p>Rating: {this.props.show.vote_average}</p>
+					    <p>Release date: {this.props.show.first_air_date}</p>
 					    <button onClick={this.goBack} type="button" className="btn btn-warning">Back</button>
 					  </div>
 					</div>
@@ -41,11 +45,13 @@ class TvShowDetails extends Component{
   						<iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${key}`} key={this.props.show.id}></iframe>
 					</div>
 					<div className="card mb-3" >
+					<div className="card-bg" />
 					  <div className="card-body">
 			    		<h5 className="card-title">{this.props.show.name}</h5>
-			    		<h6>Overview:</h6>
+			    		<h6><strong>Overview:</strong></h6>
 			    		<p className="card-text">{this.props.show.overview}</p>
 			    		<p>Rating: {this.props.show.vote_average}</p>
+			    		<p>Release date: {this.props.show.first_air_date}</p>
 			    		<button onClick={this.goBack} type="button" className="btn btn-warning">Back</button>
 			  		  </div>
 					</div>

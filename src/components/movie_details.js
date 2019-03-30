@@ -27,11 +27,13 @@ class MovieDetails extends Component{
 				<div className="detail">
 				<img id="mvimg" src={`http://image.tmdb.org/t/p/w185/${this.props.movie.poster_path}`} key={this.props.movie.id}/>
 				<div className="card mb-3" >
+				<div className="card-bg" />
 			  		<div className="card-body">
-			    		<h5 className="card-title">{this.props.movie.name}</h5>
-			    		<h6>Overview:</h6>
+			    		<h5 className="card-title">{this.props.movie.title}</h5>
+			    		<h6><strong>Overview:</strong></h6>
 			    			<p className="card-text">{this.props.movie.overview}</p>
 			    			<p>Rating: {this.props.movie.vote_average}</p>
+			    			<p>Relase date: {this.props.movie.release_date}</p>
 			    			<button onClick={this.goBack} type="button" className="btn btn-warning">Back</button>
 			  		</div>
 				</div>
@@ -44,11 +46,13 @@ class MovieDetails extends Component{
   			<iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${key}`} key={this.props.movie.id}></iframe>
 			</div>
 				<div className="card mb-3" >
+				<div className="card-bg" />
 			  		<div className="card-body">
-			    		<h5 className="card-title">{this.props.movie.name}</h5>
-			    		<h6>Overview:</h6>
+			    		<h5 className="card-title">{this.props.movie.title}</h5>
+			    		<h6><strong>Overview:</strong></h6>
 			    			<p className="card-text">{this.props.movie.overview}</p>
 			    			<p>Rating: {this.props.movie.vote_average}</p>
+			    			<p>Relase date: {this.props.movie.release_date}</p>
 			    			<button onClick={this.goBack} type="button" className="btn btn-warning">Back</button>
 			  		</div>
 				</div>

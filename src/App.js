@@ -8,7 +8,8 @@ import Main from './components/Main';
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="main">
+      <div className="bg" />
         <BrowserRouter>
           <div>
             <Route exact={true} path="/" component={Main} />
