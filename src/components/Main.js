@@ -15,19 +15,19 @@ class Main extends Component{
 
 		this.state = {
 			tv: true, 
-			movie: false
+			movie: false 
 			}
 
 		this.actTv = this.actTv.bind(this);
 		this.actMovie= this.actMovie.bind(this);
 		this.onInputChange = this.onInputChange.bind(this);
 	}
-
-
+	
 	actMovie(state){
 		this.setState({
 			movie: true,
 			tv: false });
+
 	}
 
 	actTv(state){

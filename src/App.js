@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import MovieDetails from './components/movie_details';
 import TvShowDetails from './components/tv_details';
 import Main from './components/Main';
+import TopMovies from './components/TopMovies';
 
 class App extends Component {
   render() {

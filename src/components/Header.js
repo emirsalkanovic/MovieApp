@@ -16,7 +16,7 @@ class Header extends Component{
 	actMovie(){
 		this.setState({
 			tv: false,
-			movies: true
+			movies: true 
 		});
 
 		this.props.onClickMovie(this.state);

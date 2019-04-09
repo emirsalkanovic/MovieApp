@@ -12,6 +12,7 @@ class MovieDetails extends Component{
 
 	goBack(){
 	    this.props.history.goBack();
+
 	}
 
 	componentDidMount(){
