@@ -93,7 +93,7 @@ export function selectTv(show) {
 export function videoMovie(id){
 	return(dispatch) => {
 		axios
-		  .get(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
+		  .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
 		  .then((res) => {
 		  	const results = res.data.results;
 

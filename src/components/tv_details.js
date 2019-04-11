@@ -20,7 +20,8 @@ class TvShowDetails extends Component{
 		const video = this.props.video.videoShow;
 		const key = video[0] ? video[0].key : undefined;
 		
-		if (key == undefined){
+		
+		if (key == undefined){ 
 			return(
 				<div className="detail">
 					
