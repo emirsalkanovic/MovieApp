@@ -27,7 +27,7 @@ class TVInfo extends Component {
 			<li
 				key={show.id}
 				onClick={() => this.props.selectTv(show)}
-				className="col-md-6 form-group">
+				className="col-md-6 form-group object">
 				<Link to={`/${show.id}/details`}>
 					<img src={`http://image.tmdb.org/t/p/w185/${show.poster_path}`} key={show.id}/>
 					<h3>{show.name}</h3>

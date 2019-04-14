@@ -28,7 +28,7 @@ class MovieInfo extends Component {
 			<li
 				key={movie.id}
 				onClick={() => this.props.selectMovie(movie)}
-				className="col-md-6 form-group">
+				className="col-md-6 form-group object">
 				<Link to={`/movies/${movie.id}/details`}>
 					<img src={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`} key={movie.id}/>
 					<h3>{movie.title}</h3>

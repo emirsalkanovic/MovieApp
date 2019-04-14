@@ -43,52 +43,41 @@ class Main extends Component{
 
 	}
 
-	render(){
+	renderContent(){
 		if(this.state.movie === true){
 			if(this.props.moviesSearch.searchMovies.results !== undefined ){
+				return(
+					<MoviesResult />
+					);
+			}
+
+			return ( 
+				<TopMovies />
+				);
+		} else if (this.state.tv === true){
+			if(this.props.showsSearch.searchShows.length > 0){
+				return(
+					<ShowsResult />
+					);
+			}
+
+			return ( 
+				<TopTv />
+				);
+		}
+	}
+
+	render(){
 				return(
 					<div>
 						<Header onClickMovie={this.actMovie} onClickTv={this.actTv} />
 						<Search searchMovies={ (e) => this.onInputChange} />
-						<MoviesResult />
+						{this.renderContent()}
 					</div>
 					);
 			}
-			return(
-				<div>
-					<Header onClickMovie={this.actMovie} onClickTv={this.actTv} />
-					<Search searchMovies={ (e) => this.onInputChange} />
-					<TopMovies />
-				</div>
-				);
-		}
-		if(this.state.tv === true){
-			if(this.props.showsSearch.searchShows.length > 0){
-				return(
-					<div>
-						<Header onClickMovie={this.actMovie} onClickTv={this.actTv} />
-						<Search searchShows={ (e) => this.onInputChange} />
-						<ShowsResult />
-					</div>
-				);
-			}
-			return(
-				<div>
-					<Header onClickMovie={this.actMovie} onClickTv={this.actTv} />
-					<Search searchShows={ (e) => this.onInputChange} />
-					<TopTv />
-				</div>
-				);
-		}
-		return(
-			<div>
-				<Header />
-				<Search />
-			</div>
-		);		
-		
 	}
-}
+
 
 function mapStateToProps(state){
 	return{

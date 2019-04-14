@@ -33,15 +33,25 @@ class Header extends Component{
 	}
 	render(){
 		return(
-			<nav className="navbar navbar-light bg-light">
-  				<form className="form-inline">
-  					<Link to="/" onClick={this.actMovie}>
-    				<button className="btn btn-outline-primary btn-lg" data-toggle="button" type="button" aria-pressed="true" autoComplete="off">Movies</button>
+			<nav className="navbar navbar-expand navbar-dark bg-primary">
+				<a className="navbar-brand" href="/">Movie App</a>
+  				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+  				  <span className="navbar-toggler-icon"></span>
+  				</button>
+  				<div className="collapse navbar-collapse" id="navbarsExample02">
+  				  <ul className="navbar-nav mr-auto">
+  				    <li className="nav-item">
+  				      <Link to="/" onClick={this.actMovie}>
+    				<button className="btn btn-outline-primary btn-lg bg-light" data-toggle="button" type="button" aria-pressed="true" autoComplete="off">Movies</button>
     				</Link>
-    				<Link to="/" onClick={this.actTv}>
-    				<button className="btn btn-outline-primary btn-lg" data-toggle="button" type="button" aria-pressed="true" autoComplete="off">Tv Shows</button>
- 			 		</Link>
- 			 	</form>
+  				    </li>
+  				    <li className="nav-item">
+  				      <Link to="/" onClick={this.actTv}>
+    				<button className="btn btn-outline-primary btn-lg bg-light" data-toggle="button" type="button" aria-pressed="true" autoComplete="off">Tv Shows</button>
+ 					</Link>
+  				    </li>
+  				  </ul>
+  				</div>
 			</nav>
 			);
 	}
